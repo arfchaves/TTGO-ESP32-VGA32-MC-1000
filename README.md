@@ -1,0 +1,2 @@
+# TTGO-ESP32-VGA32-MC-1000
+Emulador de MC-1000 CCE para placas TTGO ESP32 VGA32 versão 1.4
