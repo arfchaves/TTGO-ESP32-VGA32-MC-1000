@@ -36,6 +36,7 @@ independente da CCE e dos titulares dos componentes de hardware e software.
 - **Cartão microSD:** arquivos de fita `.CAS` no diretório raiz do cartão.
   Carregamento em dois estágios conforme a ROM; SAVE/LOAD já testados
   com sistema de arquivos simulado, porém **pendentes de validação no TTGO**.
+- **Compatibilidade com [ESP32 Bootloader (ESP-WORKS)](https://github.com/ESP-WORKS/ESP32_Bootloader):** projeto preparado para integração com o ESP32 Bootloader, com compatibilidade total declarada para o fluxo de inicialização utilizado pelo MC-1000. A integração deve ser validada na placa e na versão do bootloader escolhida.
 - **Modo de RAM expandida:** configuração de emulação com 64 KiB de espaço RAM
   (conforme os bancos mapeados no modelo do projeto).
 
@@ -124,23 +125,23 @@ obrigações GPL aplicáveis à FabGL.
 
 ```text
 ttgo-vga32-mc1000/
-├── ttgo-vga32-mc1000.ino        # Inicialização e tarefas ESP32
+├── ttgo-vga32-mc1000.ino          # Inicialização e tarefas ESP32
 ├── src/
-│   ├── mc1000.cpp/.h           # Máquina, memória, teclado, SD/CAS
-│   ├── z80/Z80.cpp/.h          # Novo núcleo Z80, MIT
-│   ├── ay38910.cpp/.h          # Novo PSG AY-3-8910, MIT
-│   ├── mc6847.cpp/.h           # Vídeo e molduras em pixels
-│   ├── mc6847_font_mit.inc     # Tabela de caracteres do jsMC1000 (MIT)
-│   ├── osd.cpp/.h              # Menus e avisos
-│   └── mc1000_rom.h            # Declaração da ROM gerada localmente
-├── tools/prepare_rom.py        # Conversor ROM -> C (sem bytes de ROM)
-├── tools/audit_public_release.py # Verificação automatizada de vazamentos no pacote público
-├── LICENSE                     # MIT para os componentes aplicáveis
-├── licenses/jsMC1000-MIT.txt   # Aviso MIT original do autor da fonte
+│   ├── mc1000.cpp/.h              # Máquina, memória, teclado, SD/CAS
+│   ├── z80/Z80.cpp/.h             # Novo núcleo Z80, MIT
+│   ├── ay38910.cpp/.h             # Novo PSG AY-3-8910, MIT
+│   ├── mc6847.cpp/.h              # Vídeo e molduras em pixels
+│   ├── mc6847_font_mit.inc        # Tabela de caracteres do jsMC1000 (MIT)
+│   ├── osd.cpp/.h                 # Menus e avisos
+│   └── mc1000_rom.h               # Declaração da ROM gerada localmente
+├── tools/prepare_rom.py           # Conversor ROM -> C (sem bytes de ROM)
+├── tools/audit_public_release.py  # Verificação automatizada de vazamentos no pacote público
+├── LICENSE                        # MIT para os componentes aplicáveis
+├── licenses/jsMC1000-MIT.txt      # Aviso MIT original do autor da fonte
 ├── licenses/FabGL-GPLv3-NOTICE.md # Aviso GPL da dependência externa
-├── THIRD_PARTY_NOTICES.md      # Origem, créditos e licenças
-├── LICENSING_AND_ROM.md        # Limitações da MIT/GPL e política de ROM
-└── tests/                     # Testes isolados Z80, PSG, CAS e protocolo da ROM
+├── THIRD_PARTY_NOTICES.md         # Origem, créditos e licenças
+├── LICENSING_AND_ROM.md           # Limitações da MIT/GPL e política de ROM
+└── tests/                         # Testes isolados Z80, PSG, CAS e protocolo da ROM
 ```
 
 ## 🤝 Contribuições
@@ -169,6 +170,7 @@ referências e estudos contribuíram para este port:
   O código GPL desse emulador **não** integra esta versão.
 - **Víctor Iborra, David Crespo e colaboradores — [ESPectrum](https://github.com/EremusOne/ESPectrum):** inspiração visual dos menus e estudos de
   temporização/áudio; código GPL **não incorporado**.
+- **[ESP-WORKS — ESP32 Bootloader](https://github.com/ESP-WORKS/ESP32_Bootloader):** agradecimento pelo projeto de bootloader para ESP32 e pela possibilidade de integração com o emulador MC-1000. Este crédito não implica incorporação do código do bootloader nem endosso de seus autores.
 - **[MAME](https://github.com/mamedev/mame):** informações de hardware,
   mapeamento dos bancos de memória, modos do VDG e referência da paleta.
 - **Comunidade [CCE MC-1000](https://sites.google.com/site/ccemc1000/p%C3%A1gina-inicial):** documentação histórica, guias de BASIC e formato de fita.
